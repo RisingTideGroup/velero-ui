@@ -1,10 +1,10 @@
 FROM node:lts-alpine as build-stage
 RUN npm install npm@latest -g
-RUN npm update
+RUN npm cache clean --force
 
 WORKDIR /app
 COPY package*.json ./
-RUN npm install -g
+RUN npm update
 RUN yarn install
 COPY . .
 RUN yarn build
