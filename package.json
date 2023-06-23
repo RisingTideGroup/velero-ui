@@ -80,6 +80,7 @@
   "jest": {
     "preset": "@vue/cli-plugin-unit-jest"
   },
+  "type": "module",
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
