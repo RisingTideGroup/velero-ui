@@ -1,6 +1,10 @@
 FROM node:lts-alpine as build-stage
+RUN npm install npm@latest -g
+RUN npm update
+
 WORKDIR /app
 COPY package*.json ./
+RUN npm install -g
 RUN yarn install
 COPY . .
 RUN yarn build
